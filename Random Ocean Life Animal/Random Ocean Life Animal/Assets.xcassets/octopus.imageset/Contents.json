@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "octopus.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "octopus.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
