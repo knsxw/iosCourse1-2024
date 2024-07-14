@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func phoneClicked(button: UIButton) {
-        var textInput = textField.text ?? ""
+        let textInput = textField.text ?? ""
         switch button.tag {
         case 1:
             textField.text = textInput + "1"
@@ -68,6 +68,21 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func deleteClicked() {
+        if let textInput = textField.text, !textInput.isEmpty {
+            let words = textInput.split(separator: "")
+            if !words.isEmpty {
+                let newWords = words.dropLast()
+                textField.text = newWords.joined(separator: "")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! SecondViewController
+        destination.phoneNumber = textField.text!
     }
 }
 

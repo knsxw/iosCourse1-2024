@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vx5-Vv-MdM">
-                                <rect key="frame" x="58" y="126" width="240" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="9Mu-Jj-PqE"/>
-                                    <constraint firstAttribute="width" constant="240" id="AWD-wQ-e5r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y8l-PG-zZL">
                                 <rect key="frame" x="0.0" y="225" width="393" height="593"/>
                                 <subviews>
@@ -251,6 +243,9 @@
                                                 <buttonConfiguration key="configuration" style="gray" image="phone.fill" catalog="system">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="1gV-ml-OWG" kind="show" id="5mF-Au-CnL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -260,14 +255,41 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vx5-Vv-MdM">
+                                <rect key="frame" x="58" y="126" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="9Mu-Jj-PqE"/>
+                                    <constraint firstAttribute="width" constant="240" id="AWD-wQ-e5r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-2D-IyD">
+                                <rect key="frame" x="306" y="126" width="61" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="61" id="ELg-JK-S0n"/>
+                                    <constraint firstAttribute="height" constant="51" id="R4R-WG-OQa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="delete.left" catalog="system" symbolScale="large"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bed-qe-YBW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Y8l-PG-zZL" firstAttribute="top" secondItem="vx5-Vv-MdM" secondAttribute="bottom" constant="65" id="Fch-To-mRW"/>
                             <constraint firstItem="vx5-Vv-MdM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-283" id="L1N-YR-ytR"/>
+                            <constraint firstItem="Xq0-2D-IyD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-274.5" id="NtE-Rf-5a8"/>
+                            <constraint firstItem="Xq0-2D-IyD" firstAttribute="leading" secondItem="vx5-Vv-MdM" secondAttribute="trailing" constant="8" symbolic="YES" id="PQM-Vh-jbx"/>
                             <constraint firstItem="Y8l-PG-zZL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XkY-yJ-qtE"/>
                             <constraint firstItem="Y8l-PG-zZL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ccL-WZ-j08"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xq0-2D-IyD" secondAttribute="trailing" constant="26" id="eXq-fx-PyW"/>
                             <constraint firstItem="vx5-Vv-MdM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-18.5" id="qJH-Xn-yf1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y8l-PG-zZL" secondAttribute="bottom" id="rJx-Xo-DzB"/>
                         </constraints>
@@ -293,23 +315,66 @@
             </objects>
             <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="hf5-Y4-sdB">
             <objects>
-                <viewController id="1gV-ml-OWG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eW2-3H-6Od">
+                <viewController modalPresentationStyle="fullScreen" id="1gV-ml-OWG" customClass="SecondViewController" customModule="PhoneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eW2-3H-6Od" customClass="Second">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tC-yR-lfY">
+                                <rect key="frame" x="196.66666666666666" y="306.66666666666669" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calling mobile..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWT-GI-9Ew">
+                                <rect key="frame" x="131" y="333" width="131" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-V3-W7O">
+                                <rect key="frame" x="146.66666666666666" y="576" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="KMx-c8-WQA"/>
+                                    <constraint firstAttribute="height" constant="100" id="j6b-Za-Fsk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="phone.down.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismiss:" destination="1gV-ml-OWG" eventType="touchUpInside" id="PHR-Ff-t4H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mfo-zU-WTK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Db7-V3-W7O" firstAttribute="centerY" secondItem="eW2-3H-6Od" secondAttribute="centerY" constant="200" id="C5i-2U-dMP"/>
+                            <constraint firstItem="Db7-V3-W7O" firstAttribute="centerX" secondItem="eW2-3H-6Od" secondAttribute="centerX" id="HAX-3k-kQX"/>
+                            <constraint firstItem="0tC-yR-lfY" firstAttribute="centerY" secondItem="eW2-3H-6Od" secondAttribute="centerY" constant="-119.5" id="Riu-ZV-utx"/>
+                            <constraint firstItem="xWT-GI-9Ew" firstAttribute="centerY" secondItem="eW2-3H-6Od" secondAttribute="centerY" constant="-81.5" id="SNy-LZ-I7n"/>
+                            <constraint firstItem="xWT-GI-9Ew" firstAttribute="centerX" secondItem="eW2-3H-6Od" secondAttribute="centerX" id="h0R-SR-FIx"/>
+                            <constraint firstItem="0tC-yR-lfY" firstAttribute="centerX" secondItem="eW2-3H-6Od" secondAttribute="centerX" id="vqa-T6-Gze"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jdJ-7m-lrV"/>
+                    <connections>
+                        <outlet property="phoneBtn" destination="Db7-V3-W7O" id="xbZ-3F-rul"/>
+                        <outlet property="phoneLabel" destination="0tC-yR-lfY" id="b3G-AV-j3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIk-Od-dHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="4"/>
+            <point key="canvasLocation" x="791.60305343511448" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="delete.left" catalog="system" width="128" height="102"/>
+        <image name="phone.down.fill" catalog="system" width="128" height="55"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
