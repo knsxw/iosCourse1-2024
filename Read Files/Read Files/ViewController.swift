@@ -11,12 +11,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    var students : StudentsList? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        guard let txtContent = readTextFile(named: "Configuration", withExtension: "txt") else {
-            return
-        }
+//        guard let txtContent = readTextFile(named: "Configuration", withExtension: "txt") else {
+//            return
+//        }
+        students = readJSONFileForStudent(named: "Students", withExtension: "json")
         guard let jsonContent = readJSONFile(named: "Configuration", withExtension: "json") else {
             return
         }
@@ -73,6 +76,39 @@ class ViewController: UIViewController {
             print("File not found.")
         }
         return nil
+    }
+    
+    func readJSONFileForStudent(named: String, withExtension: String) -> StudentsList? {
+            if let fileURL = Bundle.main.url(forResource: named, withExtension: withExtension) {
+                do {
+                    let data = try Data(contentsOf: fileURL)
+                    let decoder = JSONDecoder()
+                    let studentsList = try decoder.decode(StudentsList.self, from: data)
+                    return studentsList
+                } catch {
+                    print("Error reading or decoding file: \(error.localizedDescription)")
+                    return nil
+                }
+            } else {
+                print("File not found")
+                return nil
+            }
+        }
+    
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return students?.students.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.row
+        
+        let cell = UITableViewCell()
+        let message = "\(students?.students[index].name ?? "" ) is \(String(describing: students?.students[index].age ?? 0 )) years old. "
+        cell.textLabel?.text = message
+        return cell
     }
     
     

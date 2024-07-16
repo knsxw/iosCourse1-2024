@@ -11,7 +11,10 @@ struct Student: Codable {
     let name: String
     let age: Int
     
-    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case age = "age"
+    }
 }
 
 struct StudentsList: Codable {
