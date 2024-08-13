@@ -7,6 +7,7 @@
 
 import UIKit
 
+var FAVORITE_RESTAURANTS : [String] = []
 class ResViewController: UIViewController {
 
     var restaurant: Restaurant?
@@ -27,9 +28,13 @@ class ResViewController: UIViewController {
         rating.text = "\(restaurant!.rating) ⭐⭐⭐⭐"
         resImage.image = UIImage(named: restaurant?.images[0] ?? "")
         resLocation.text = restaurant?.location
-        // Do any additional setup after loading the view.
     }
     
+    @IBAction func favoriteClick() {
+        if let restaurant = restaurant {
+            FAVORITE_RESTAURANTS.append(restaurant.name)
+        }
+    }
 
     /*
     // MARK: - Navigation
