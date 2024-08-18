@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ogf-ql-gL1">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PTP-9u-82M">
+            <objects>
+                <tabBarController id="ogf-ql-gL1" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GVj-q9-Wdr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPurpleColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GXc-hC-9Y0"/>
+                        <segue destination="wk5-RH-Cgs" kind="relationship" relationship="viewControllers" id="0n1-3l-HrP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7P-Fg-f4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1326" y="-146"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AU_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-aU-ghh">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JPA-aU-ghh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vV-Fv-e6e"/>
+                            <constraint firstItem="JPA-aU-ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Quk-9c-C1Q"/>
+                            <constraint firstAttribute="bottom" secondItem="JPA-aU-ghh" secondAttribute="bottom" id="T3v-nP-XRs"/>
+                            <constraint firstItem="JPA-aU-ghh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a4f-me-kbI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="upW-lb-gAq"/>
+                    <connections>
+                        <outlet property="mapView" destination="JPA-aU-ghh" id="yQP-tx-rQL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419.08396946564886" y="-509.15492957746483"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="Qre-rB-xyL">
+            <objects>
+                <viewController id="wk5-RH-Cgs" customClass="ListViewController" customModule="AU_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BSy-PP-MLN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-q6-ReD">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="91" id="GHU-pe-nCj" customClass="AUTableViewCell" customModule="AU_Map" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GHU-pe-nCj" id="X2Q-BK-bXq">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WYb-xh-2eR">
+                                                    <rect key="frame" x="28" y="9" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="LnC-cW-jaL"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vincent Mary School of Engineering" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo5-lP-is9">
+                                                    <rect key="frame" x="106" y="9" width="221.33333333333337" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WYb-xh-2eR" firstAttribute="top" secondItem="X2Q-BK-bXq" secondAttribute="topMargin" constant="-4" id="4AI-7L-Zqf"/>
+                                                <constraint firstItem="Yo5-lP-is9" firstAttribute="centerY" secondItem="X2Q-BK-bXq" secondAttribute="centerY" constant="-16" id="KqY-IO-MJz"/>
+                                                <constraint firstAttribute="bottom" secondItem="WYb-xh-2eR" secondAttribute="bottom" constant="12" id="RS5-V3-uD1"/>
+                                                <constraint firstItem="WYb-xh-2eR" firstAttribute="top" secondItem="X2Q-BK-bXq" secondAttribute="top" constant="9" id="XV5-8d-aRl"/>
+                                                <constraint firstItem="Yo5-lP-is9" firstAttribute="leading" secondItem="WYb-xh-2eR" secondAttribute="trailing" constant="8" symbolic="YES" id="YHV-bZ-dXb"/>
+                                                <constraint firstItem="WYb-xh-2eR" firstAttribute="centerY" secondItem="X2Q-BK-bXq" secondAttribute="centerY" constant="-1.5" id="cio-dI-HkC"/>
+                                                <constraint firstItem="WYb-xh-2eR" firstAttribute="leading" secondItem="X2Q-BK-bXq" secondAttribute="leading" constant="28" id="drZ-vm-xVL"/>
+                                                <constraint firstItem="Yo5-lP-is9" firstAttribute="top" secondItem="X2Q-BK-bXq" secondAttribute="topMargin" constant="-4" id="viz-rU-mur"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Yo5-lP-is9" secondAttribute="trailing" constant="-9" id="xxs-eJ-vdJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageLogo" destination="WYb-xh-2eR" id="Qil-ff-yhZ"/>
+                                            <outlet property="title" destination="Yo5-lP-is9" id="oJG-3i-Gvf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Jc-vQ-g3w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MRI-q6-ReD" firstAttribute="top" secondItem="6Jc-vQ-g3w" secondAttribute="top" id="233-jU-P6o"/>
+                            <constraint firstItem="MRI-q6-ReD" firstAttribute="leading" secondItem="6Jc-vQ-g3w" secondAttribute="leading" id="BkA-0d-fjY"/>
+                            <constraint firstAttribute="bottom" secondItem="MRI-q6-ReD" secondAttribute="bottom" id="eXz-tV-JMY"/>
+                            <constraint firstItem="MRI-q6-ReD" firstAttribute="trailing" secondItem="6Jc-vQ-g3w" secondAttribute="trailing" id="hMZ-rx-dp5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List" image="list.bullet.rectangle.portrait" catalog="system" id="3OZ-H7-S9j"/>
+                    <connections>
+                        <outlet property="tableView" destination="MRI-q6-ReD" id="OXB-Xq-hOu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Z7-nc-0nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419.08396946564886" y="207.74647887323945"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
