@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f54-QU-F2e">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KMz-VJ-zh6">
+            <objects>
+                <navigationController id="f54-QU-F2e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m0S-eK-X5H">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JAQ-l9-Kuh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJO-L6-gOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1219" y="32"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kY8-S9-hDz">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a8y-HW-LIs">
+                                    <size key="itemSize" width="179" height="179"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="solar_cell" id="qq9-qH-90p" customClass="SolarCell" customModule="Solar_System" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="179"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Up-Ki-F7N">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="179"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-Je-bHX">
+                                                    <rect key="frame" x="8" y="8" width="163" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="KyW-cA-Sv2"/>
+                                                        <constraint firstAttribute="height" constant="100" id="s5O-LX-1xC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pr3-cz-ApP">
+                                                    <rect key="frame" x="69" y="124" width="41" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="7Hi-Je-bHX" firstAttribute="leading" secondItem="2Up-Ki-F7N" secondAttribute="leading" constant="8" id="BWx-g7-8c9"/>
+                                                <constraint firstItem="Pr3-cz-ApP" firstAttribute="top" secondItem="7Hi-Je-bHX" secondAttribute="bottom" constant="16" id="Imt-s0-fT6"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Hi-Je-bHX" secondAttribute="trailing" constant="8" id="b5D-i5-jcx"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pr3-cz-ApP" secondAttribute="bottom" constant="18" id="bWj-DV-Cqb"/>
+                                                <constraint firstItem="Pr3-cz-ApP" firstAttribute="centerX" secondItem="7Hi-Je-bHX" secondAttribute="centerX" id="k3o-aV-pkW"/>
+                                                <constraint firstItem="7Hi-Je-bHX" firstAttribute="top" secondItem="2Up-Ki-F7N" secondAttribute="top" constant="8" id="r5L-az-TaO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="179" height="179"/>
+                                        <connections>
+                                            <outlet property="planetImageView" destination="7Hi-Je-bHX" id="zP4-Oj-Q5z"/>
+                                            <outlet property="planetName" destination="Pr3-cz-ApP" id="oUL-0Z-glG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3lf-KG-2Ru"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CEO-4W-CYb"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zK5-qF-aKm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.2900763358778624" y="3.5211267605633805"/>
+        </scene>
+        <!--Planet View Controller-->
+        <scene sceneID="wst-4T-vpu">
+            <objects>
+                <viewController storyboardIdentifier="solar" id="RRA-b0-Gfa" customClass="PlanetViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qfX-lr-rXD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZF-nI-REv">
+                                <rect key="frame" x="0.0" y="220" width="393" height="347"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="89J-CV-Am6"/>
+                                    <constraint firstAttribute="height" constant="347" id="uDQ-f9-q2q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H23-7h-9dI">
+                                <rect key="frame" x="155" y="641" width="83" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tW2-np-qwt"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H23-7h-9dI" firstAttribute="top" secondItem="cZF-nI-REv" secondAttribute="bottom" constant="74" id="5Ih-d6-9s4"/>
+                            <constraint firstItem="H23-7h-9dI" firstAttribute="centerX" secondItem="cZF-nI-REv" secondAttribute="centerX" id="63c-AW-wRQ"/>
+                            <constraint firstItem="cZF-nI-REv" firstAttribute="trailing" secondItem="tW2-np-qwt" secondAttribute="trailing" id="GnM-fQ-Zi1"/>
+                            <constraint firstItem="cZF-nI-REv" firstAttribute="leading" secondItem="tW2-np-qwt" secondAttribute="leading" id="H2s-WJ-HeU"/>
+                            <constraint firstItem="cZF-nI-REv" firstAttribute="top" secondItem="tW2-np-qwt" secondAttribute="top" constant="161" id="IAk-vO-nwo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="planetImageView" destination="cZF-nI-REv" id="zYJ-HM-0Uq"/>
+                        <outlet property="planetName" destination="H23-7h-9dI" id="0KN-L2-yFz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikh-3a-Z0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861.83206106870227" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+</document>
