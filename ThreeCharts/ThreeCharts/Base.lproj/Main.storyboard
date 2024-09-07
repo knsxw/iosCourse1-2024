@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-6C-XuA">
+                                <rect key="frame" x="0.0" y="104" width="393" height="710"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-bi-U0C">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="228.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9F-Ec-Ocu">
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-Pw-FOx" customClass="LineChartView" customModule="DGCharts">
+                                                <rect key="frame" x="0.0" y="28.666666666666657" width="393" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5CW-Pw-FOx" secondAttribute="trailing" id="zml-ow-b8c"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="rrs-Qn-iGk">
+                                        <rect key="frame" x="0.0" y="240.66666666666669" width="393" height="228.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-h7-0dH">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHR-x1-53J" customClass="BarChartView" customModule="DGCharts">
+                                                <rect key="frame" x="0.0" y="28.666666666666629" width="393" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="BHR-x1-53J" secondAttribute="trailing" id="Er8-Yb-4dz"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="EBq-7e-fCc">
+                                        <rect key="frame" x="0.0" y="481.33333333333343" width="393" height="228.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pie Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkP-JZ-sg5">
+                                                <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTG-YJ-Dhw" customClass="PieChartView" customModule="DGCharts">
+                                                <rect key="frame" x="0.0" y="28.666666666666629" width="393" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wTG-YJ-Dhw" secondAttribute="trailing" id="EE8-Fr-IxE"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rrs-Qn-iGk" firstAttribute="top" secondItem="qcl-6C-XuA" secondAttribute="top" constant="240.66666666666666" id="Ei9-eI-Jn2"/>
+                                    <constraint firstItem="rrs-Qn-iGk" firstAttribute="centerY" secondItem="qcl-6C-XuA" secondAttribute="centerY" id="n0f-PT-3ZF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qcl-6C-XuA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nws-KP-83T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qcl-6C-XuA" secondAttribute="bottom" constant="4" id="aF4-0l-3ag"/>
+                            <constraint firstItem="qcl-6C-XuA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="arF-jV-mkH"/>
+                            <constraint firstAttribute="trailing" secondItem="qcl-6C-XuA" secondAttribute="trailing" id="pkY-33-S8R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="BHR-x1-53J" id="sOu-Si-1Po"/>
+                        <outlet property="lineChartView" destination="5CW-Pw-FOx" id="6g7-2n-4lC"/>
+                        <outlet property="pieChartView" destination="wTG-YJ-Dhw" id="RFf-WN-X3P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
