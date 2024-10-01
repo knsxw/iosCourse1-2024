@@ -57,7 +57,6 @@ class RestaurantCell: UITableViewCell {
             start5.isHidden = false
         }
     }
-
     
     
     
